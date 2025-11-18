@@ -1,0 +1,1 @@
+export { TableWithActionsBody } from "./TableWithActionBody";

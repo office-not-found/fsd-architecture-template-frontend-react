@@ -1,0 +1,13 @@
+.table-with-actions-toolbar {
+    &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__left-area {
+        display: flex;
+        gap: 10px;
+    }
+}

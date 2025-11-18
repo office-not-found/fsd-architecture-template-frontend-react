@@ -1,0 +1,1 @@
+export { useTableFieldsConfigurator } from "./useTableFieldsConfigurator";

@@ -1,0 +1,1 @@
+export { useGetCurrentAccountQuery } from "./useGetCurrentAccountQuery";

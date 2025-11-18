@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 50px 60px;
+    border-radius: 16px;
+
+    background: var(--mantine-color-backgroundBasic-0);
+
+    &__title {
+        margin-bottom: 20px;
+
+        font-size: 24px;
+        font-weight: 600;
+        color: var(--mantine-color-white-0);
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

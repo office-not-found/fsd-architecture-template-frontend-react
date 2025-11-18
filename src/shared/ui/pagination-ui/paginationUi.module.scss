@@ -1,0 +1,10 @@
+.pagination-ui {
+    :global(.mantine-Pagination-control[data-active]) {
+        color: var(--mantine-color-backgroundBasic-0);
+    }
+
+    :global(.mantine-Pagination-control:not([data-active])) {
+        border: none;
+        background: transparent;
+    }
+}

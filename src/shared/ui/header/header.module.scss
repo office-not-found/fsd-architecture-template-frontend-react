@@ -1,0 +1,21 @@
+.header {
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--mantine-color-white-0);
+    }
+
+    &__subtitle {
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        color: var(--mantine-color-gray-0);
+    }
+}

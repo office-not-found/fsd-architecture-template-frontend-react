@@ -1,0 +1,38 @@
+.filters {
+    &__trigger {
+        display: flex;
+        gap: 10px;
+    }
+
+    &__dropdown {
+        background: var(--mantine-color-backgroundBasic-0);
+    }
+
+    &__items {
+        overflow: auto;
+        width: 300px;
+        max-height: 280px;
+        margin-block: 10px;
+    }
+
+    &__clear-all {
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 8px 0;
+    }
+
+    &__item {
+        padding: 8px;
+    }
+
+    &__label {
+        margin-bottom: 4px;
+    }
+
+    &__apply {
+        display: flex;
+        gap: 8px;
+        margin-top: 8px;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,14 @@
+.add-new-user-modal-content {
+    display: flex;
+    flex-direction: column;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    &__submit {
+        margin-top: 14px;
+    }
+}

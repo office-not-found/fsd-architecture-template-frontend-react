@@ -1,0 +1,41 @@
+.information-card {
+    min-width: 260px;
+    height: min-content;
+    padding: 24px 24px 16px;
+    border-radius: 12px;
+
+    background: var(--mantine-color-backgroundDark-0);
+
+    &__title {
+        margin-bottom: 12px;
+
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--mantine-color-grayLight-0);
+        text-transform: uppercase;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+
+        &-group {
+            padding-top: 12px;
+            border-top: 1px solid var(--mantine-color-backgroundStroke-0);
+        }
+    }
+
+    &__label {
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--mantine-color-white-0);
+    }
+
+    &__value {
+        font-size: 15px;
+        font-weight: 400;
+        color: var(--mantine-color-gray-0);
+    }
+}

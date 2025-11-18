@@ -1,0 +1,7 @@
+.switch {
+    &_disabled {
+        :global(.mantine-Switch-track) {
+            opacity: 0.5;
+        }
+    }
+}

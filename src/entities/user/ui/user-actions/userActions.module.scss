@@ -1,0 +1,13 @@
+.user-actions {
+    display: flex;
+    gap: 5px;
+    justify-content: end;
+    padding-right: 15px;
+
+    &__edit,
+    &__remove {
+        width: min-content;
+        height: min-content;
+        padding: 4px;
+    }
+}

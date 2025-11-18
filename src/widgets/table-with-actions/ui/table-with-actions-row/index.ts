@@ -1,0 +1,1 @@
+export { TableWithActionsRowMemoized } from "./TableWithActionsRow";

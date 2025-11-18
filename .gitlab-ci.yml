@@ -1,0 +1,110 @@
+stages:
+  - check
+  - build
+  - ssh-test
+  - deploy
+
+variables:
+  NODE_ENV: production
+  HUSKY: "0"
+
+before_script:
+  # Настройка SSH
+  - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+  - echo "$dev_test_new_themultiform" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+  - ssh-keyscan -H 94.198.54.49 94.198.54.223 >> ~/.ssh/known_hosts 2>/dev/null || true
+
+# =======================
+# Check stage
+# =======================
+check:
+  stage: check
+  image: node:22
+  script:
+    - npm ci --include=dev
+    - npm run lint
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "stage"'# || $CI_COMMIT_BRANCH == "main"'
+  tags:
+    - docker-node
+
+# =======================
+# Build stage
+# =======================
+build:
+  stage: build
+  image: node:22
+  variables:
+    NODE_ENV: development
+  script:
+    - npm ci --include=dev
+    - npx tsc -b
+    - npx vite build
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "stage"'# || $CI_COMMIT_BRANCH == "main"'
+  tags:
+    - docker-node
+
+# =======================
+# SSH-тест на DEV
+# =======================
+ssh_test_dev:
+  stage: ssh-test
+  when: manual
+  tags:
+    - multiform
+  script:
+    - ssh -i ~/.ssh/id_ed25519 subroot@94.198.54.49 "cd /var/www/subroot/testadminnew.themultiform.com/testadminnew.themultiform.com-frontend-react && pwd && ls -la"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "stage"'
+
+# =======================
+# SSH-тест на PROD
+# =======================
+ssh_test_prod:
+  stage: ssh-test
+  when: manual
+  tags:
+    - multiform
+  script:
+    - ssh -i ~/.ssh/id_ed25519 subroot@94.198.54.223 "cd /var/www/subroot/new.themultiform.com/greenadmin.themultiform.com && pwd && ls -la"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+# =======================
+# Deploy DEV
+# =======================
+deploy_dev:
+  stage: deploy
+#  when: manual
+  script:
+    - ssh -i ~/.ssh/id_ed25519 subroot@94.198.54.49 "
+        cd /var/www/subroot/testadminnew.themultiform.com/testadminnew.themultiform.com-frontend-react &&
+        git checkout stage &&
+        git pull &&
+        if ! git diff --quiet HEAD@{1} HEAD -- package.json package-lock.json; then
+          npm ci;
+        fi &&
+        npm run build
+      "
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "stage"'
+
+# =======================
+# Deploy PROD
+# =======================
+deploy_prod:
+  stage: deploy
+  when: manual
+  script:
+    - ssh -i ~/.ssh/id_ed25519 subroot@94.198.54.223 "
+        cd /var/www/subroot/new.themultiform.com/greenadmin.themultiform.com &&
+        git checkout main &&
+        git pull &&
+        if ! git diff --quiet HEAD@{1} HEAD -- package.json package-lock.json; then
+          npm ci;
+        fi &&
+        npm run build
+      "
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'

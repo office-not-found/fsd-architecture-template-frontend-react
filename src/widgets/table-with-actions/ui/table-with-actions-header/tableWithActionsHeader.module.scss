@@ -1,0 +1,12 @@
+.table-with-actions-header {
+    &__selector {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__th {
+        &-selector {
+            width: 50px;
+        }
+    }
+}

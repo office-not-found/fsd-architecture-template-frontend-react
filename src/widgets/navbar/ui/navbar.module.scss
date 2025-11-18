@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 230px;
+    border: 1px solid var(--mantine-color-backgroundStroke-0);
+
+    background: var(--mantine-color-backgroundBasic-0);
+
+    &__title {
+        padding: 20px;
+        font-size: 24px;
+        color: var(--mantine-color-white-0);
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+    }
+
+    &__account {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+        border-top: 1px solid var(--mantine-color-backgroundStroke-0);
+    }
+}

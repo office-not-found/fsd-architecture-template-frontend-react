@@ -1,0 +1,11 @@
+.logout-button {
+    padding: 0 10px;
+    transition:
+        background 0.2s,
+        color 0.2s;
+
+    &:hover {
+        color: var(--mantine-color-backgroundBasic-0);
+        background: var(--mantine-color-accent-0);
+    }
+}

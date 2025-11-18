@@ -1,0 +1,13 @@
+@use "./reset";
+
+:root[data-mantine-color-scheme="dark"] {
+    --mantine-color-body: var(--mantine-color-backgroundDark-0);
+}
+
+html,
+body,
+#root {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}

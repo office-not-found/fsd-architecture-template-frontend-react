@@ -1,0 +1,37 @@
+.sort-buttons {
+    cursor: pointer;
+
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    width: min-content;
+    margin-inline: auto;
+
+    font-weight: 700;
+    text-wrap: nowrap;
+
+    transition: filter 0.2s ease-in-out;
+
+    &:hover {
+        filter: brightness(0.8);
+    }
+
+    &__icons {
+        display: flex;
+        flex-direction: column;
+        margin-left: 6px;
+    }
+
+    &__icon {
+        transition: color 0.2s;
+    }
+
+    &__icon_inactive {
+        color: var(--mantine-color-gray-0);
+    }
+
+    &__icon_active {
+        color: var(--mantine-color-accent-0);
+    }
+}

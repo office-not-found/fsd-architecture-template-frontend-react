@@ -1,0 +1,32 @@
+.account-avatar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--mantine-color-backgroundBasic-0);
+
+        background: var(--mantine-color-grayLight-0);
+    }
+
+    &__name {
+        cursor: pointer;
+
+        overflow: hidden;
+
+        max-width: 100px;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
