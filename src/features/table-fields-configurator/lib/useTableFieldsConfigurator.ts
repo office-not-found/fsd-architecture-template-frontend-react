@@ -9,12 +9,12 @@ interface useTableFieldsConfiguratorParams<T> {
 
 export const useTableFieldsConfigurator = <T>({
     columns,
-    setter
+    setter,
 }: useTableFieldsConfiguratorParams<T>) => {
     const [opened, setOpened] = useState(false);
 
     const allowedToChangeColumns = columns?.filter(
-        (clm) => clm.label && clm.label !== "№"
+        (clm) => clm.label && clm.label !== "№",
     );
 
     const [dropdown, setDropdown] = useState<HTMLDivElement | null>(null);
@@ -28,12 +28,12 @@ export const useTableFieldsConfigurator = <T>({
             }
         },
         null,
-        [dropdown, trigger]
+        [dropdown, trigger],
     );
 
     const handleCheckboxChange = (label: string, oldIsVisible: boolean) => {
         const newColumns = columns?.map((clm) =>
-            clm.label === label ? { ...clm, isVisible: !oldIsVisible } : clm
+            clm.label === label ? { ...clm, isVisible: !oldIsVisible } : clm,
         );
 
         setter(newColumns);
@@ -45,6 +45,6 @@ export const useTableFieldsConfigurator = <T>({
         allowedToChangeColumns,
         handleCheckboxChange,
         setDropdown,
-        setTrigger
+        setTrigger,
     };
 };

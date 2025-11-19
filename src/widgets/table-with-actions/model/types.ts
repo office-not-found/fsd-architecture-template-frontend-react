@@ -8,7 +8,7 @@ export type TableWithActionsRenderBodyRow<T extends { id: number }> = (
     columns: TableColumn<T>[],
     isChecked: boolean,
     toggleSelection: (id: number) => void,
-    index: number
+    index: number,
 ) => ReactNode;
 
 export interface FieldsConfiguratorData<T extends { id: number }> {

@@ -7,7 +7,7 @@ interface UseTableSelectionProps<T extends { id: number }> {
 
 export function useTableSelection<T extends { id: number }>({
     data,
-    actionWithSelected
+    actionWithSelected,
 }: UseTableSelectionProps<T>) {
     const [selectedIds, setSelectedIds] = useState(new Set<number>());
 
@@ -41,7 +41,7 @@ export function useTableSelection<T extends { id: number }>({
 
     const allChecked = useMemo(
         () => data.length > 0 && data.every((item) => isSelected(item.id)),
-        [data, isSelected]
+        [data, isSelected],
     );
 
     const hasChecked = selectedIds.size > 0;
@@ -53,11 +53,11 @@ export function useTableSelection<T extends { id: number }>({
             toggleSelection,
             selectAll,
             deselectAll,
-            isSelected
+            isSelected,
         },
         allChecked,
         hasChecked,
         indeterminate,
-        handleActionWithSelected
+        handleActionWithSelected,
     };
 }

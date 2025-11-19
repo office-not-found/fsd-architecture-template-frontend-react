@@ -4,5 +4,5 @@ export {
     type TableWithActionsToolbarProps,
     type TableWithActionsBodyProps,
     type TableWithActionsRenderBodyRow,
-    type FieldsConfiguratorData
+    type FieldsConfiguratorData,
 } from "./types";

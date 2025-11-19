@@ -18,18 +18,18 @@ export const Switch = ({ checked, ...props }: SwitchProps) => (
             track: {
                 backgroundColor: "var(--mantine-color-backgroundDark-0)",
                 border: "none",
-                padding: "2px"
+                padding: "2px",
             },
             thumb: {
                 backgroundColor: props.checked
                     ? "var(--mantine-color-accent-0)"
                     : "var(--mantine-color-danger-0)",
                 color: "var(--mantine-color-backgroundDark-0)",
-                border: "none"
+                border: "none",
             },
             label: {
-                fontSize: "14px"
-            }
+                fontSize: "14px",
+            },
         })}
         {...props}
     />

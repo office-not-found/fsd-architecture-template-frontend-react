@@ -6,12 +6,12 @@ import type {
     IUserResultResponse,
     IUsersResponse,
     IUserBaseItem,
-    IUserDetailedItem
+    IUserDetailedItem,
 } from "../model";
 
 export const fetchUsers = async (params?: PartialURLParams) => {
     const response = await instanceApi.get<IUsersResponse>("/admin/users", {
-        params
+        params,
     });
 
     return response.data;
@@ -31,14 +31,14 @@ export const createUser = async (data: IUserCreateParams) => {
 
 export const updateUser = async ({
     userId,
-    body
+    body,
 }: {
     userId: number | string;
     body: IUserUpdateParams;
 }) => {
     const response = await instanceApi.patch<IUserBaseItem>(
         `/admin/user/${userId}`,
-        body
+        body,
     );
 
     return response.data;
@@ -46,7 +46,7 @@ export const updateUser = async ({
 
 export const deleteUser = async (ids: number[]) => {
     const response = await instanceApi.delete<IUserBaseItem>(`/admin/user`, {
-        data: { userIds: ids }
+        data: { userIds: ids },
     });
 
     return response.data;

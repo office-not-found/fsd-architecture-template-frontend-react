@@ -12,7 +12,7 @@ export const InformationCard = ({
     createdAt,
     updatedAt,
     createdBy,
-    updatedBy
+    updatedBy,
 }: InformationCardProps) => (
     <div className={styles["information-card"]}>
         <div className={styles["information-card__title"]}>INFORMATION</div>

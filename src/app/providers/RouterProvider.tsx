@@ -16,7 +16,7 @@ const router = createBrowserRouter([
             <CheckAuthProvider>
                 <LoginPage />
             </CheckAuthProvider>
-        )
+        ),
     },
     {
         path: ROUTES.INDEX,
@@ -29,14 +29,14 @@ const router = createBrowserRouter([
         children: [
             {
                 path: ROUTES.USERS,
-                element: <UsersPage />
+                element: <UsersPage />,
             },
             {
                 path: ROUTES.EDIT_USER,
-                element: <EditUserPage />
-            }
-        ]
-    }
+                element: <EditUserPage />,
+            },
+        ],
+    },
 ]);
 
 export const RouterProvider = ({ children }: PropsWithChildren) => (

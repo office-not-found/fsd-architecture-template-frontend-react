@@ -6,7 +6,7 @@ export const useLogoutButton = () => {
     const navigate = useNavigate();
 
     const { refetch: logout, isLoading } = useLogoutQuery({
-        enabled: false
+        enabled: false,
     });
 
     const onClick = async () => {
@@ -16,6 +16,6 @@ export const useLogoutButton = () => {
 
     return {
         onClick,
-        isLoading
+        isLoading,
     };
 };

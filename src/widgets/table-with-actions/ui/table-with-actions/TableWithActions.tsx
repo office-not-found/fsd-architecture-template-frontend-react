@@ -16,7 +16,7 @@ export function TableWithActions<T extends { id: number }>({
     fieldsConfiguratorData,
     onMultipleDelete,
     paginationData,
-    noDataText = "No data"
+    noDataText = "No data",
 }: TableWithActionsProps<T>) {
     const {
         selectedIds,
@@ -24,7 +24,7 @@ export function TableWithActions<T extends { id: number }>({
         allChecked,
         hasChecked,
         indeterminate,
-        handleActionWithSelected
+        handleActionWithSelected,
     } = useTableSelection({ data, actionWithSelected: onMultipleDelete });
 
     return (

@@ -2,7 +2,7 @@ export {
     addUserResolver,
     addUserSchema,
     editUserResolver,
-    editUserSchema
+    editUserSchema,
 } from "./schema";
 export {
     EUserRoleName,
@@ -14,7 +14,7 @@ export {
     type IUserCreateParams,
     type IUserUpdateParams,
     type IUsersResponse,
-    type IUserResultResponse
+    type IUserResultResponse,
 } from "./types";
 
 export { useUsersColumnsStore } from "./table-columns.store";

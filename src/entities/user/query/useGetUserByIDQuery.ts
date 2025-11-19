@@ -5,7 +5,7 @@ import { fetchUserById } from "../api";
 export const useGetUserByIDQuery = (id: number | string) => {
     const query = useQuery({
         queryKey: [EQueryKeys.USERS, id],
-        queryFn: () => fetchUserById(id)
+        queryFn: () => fetchUserById(id),
     });
 
     return query;

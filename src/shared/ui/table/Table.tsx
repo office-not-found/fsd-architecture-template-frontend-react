@@ -38,7 +38,7 @@ const Caption = (props: ComponentPropsWithoutRef<typeof TableFromLibUi.Caption>)
 );
 
 const ScrollContainer = (
-    props: ComponentPropsWithoutRef<typeof TableFromLibUi.ScrollContainer>
+    props: ComponentPropsWithoutRef<typeof TableFromLibUi.ScrollContainer>,
 ) => <TableFromLibUi.ScrollContainer {...props} />;
 
 export const Table = Object.assign(TableRoot, {
@@ -49,5 +49,5 @@ export const Table = Object.assign(TableRoot, {
     Td,
     Tfoot,
     Caption,
-    ScrollContainer
+    ScrollContainer,
 });

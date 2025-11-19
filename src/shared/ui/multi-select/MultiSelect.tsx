@@ -13,8 +13,8 @@ export const MultiSelect = ({ value, ...props }: MultiSelectProps) => (
         styles={() => ({
             pill: {
                 background: "var(--mantine-color-backgroundBasic-0)",
-                borderRadius: "8px"
-            }
+                borderRadius: "8px",
+            },
         })}
         {...props}
     />

@@ -10,7 +10,7 @@ interface IAddUserModalContentProps {
 
 export const AddUserModalContent = ({ closeModal }: IAddUserModalContentProps) => {
     const { onSubmit, register, errors, control, isCreateUserPending } = useAddUserForm({
-        closeModal
+        closeModal,
     });
 
     const { roleName: roleOptions } = useAccountStore((store) => store.options);

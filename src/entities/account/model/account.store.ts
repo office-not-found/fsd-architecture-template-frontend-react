@@ -11,7 +11,7 @@ interface AccountStore extends AccountState, AccountActions {}
 const initialState: AccountState = {
     roleName: [],
     options: {
-        roleName: []
+        roleName: [],
     },
     isAuth: false,
     userData: {
@@ -21,12 +21,12 @@ const initialState: AccountState = {
         password: "",
         roleName: null,
         updatedAt: "",
-        username: ""
-    }
+        username: "",
+    },
 };
 
 export const useAccountStore = create<AccountStore>((set) => ({
     ...initialState,
     setAccount: (account) => set(() => ({ ...account })),
-    clearAccount: () => set(() => initialState)
+    clearAccount: () => set(() => initialState),
 }));

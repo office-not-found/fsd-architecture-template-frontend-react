@@ -8,7 +8,7 @@ export const useLogoutQuery = ({ ...options }: UseLogoutQueryArgs) => {
     const query = useQuery({
         queryKey: [EQueryKeys.AUTH],
         queryFn: fetchLogout,
-        ...options
+        ...options,
     });
 
     return query;

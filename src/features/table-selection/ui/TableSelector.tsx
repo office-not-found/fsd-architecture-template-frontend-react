@@ -11,7 +11,7 @@ export function TableSelector({
     checked,
     indeterminate,
     onChange,
-    className
+    className,
 }: TableSelectorProps) {
     return (
         <div className={className}>

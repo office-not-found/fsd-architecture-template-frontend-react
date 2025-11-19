@@ -16,7 +16,7 @@ export const EditUserForm = ({ userData }: IEditUserFormProps) => {
         control,
         isUpdateUserPending,
         disabledChangeRoleForAdmin,
-        roleOptions
+        roleOptions,
     } = useEditUserForm(userData);
 
     return (

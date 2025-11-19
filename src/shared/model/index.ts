@@ -8,5 +8,5 @@ export type {
     PartialURLParams,
     NonSortParams,
     PartialNonSortParams,
-    TableColumn
+    TableColumn,
 } from "./types";

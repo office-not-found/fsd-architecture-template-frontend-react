@@ -9,7 +9,7 @@ export const addUserSchema = z.object({
         .min(3, "Username must be at least 3 characters long")
         .regex(
             /^[a-zA-Z0-9_-]+$/,
-            "Username can only contain letters, numbers and underscores or hyphens"
+            "Username can only contain letters, numbers and underscores or hyphens",
         )
         .refine(
             (val) =>
@@ -18,14 +18,14 @@ export const addUserSchema = z.object({
                 !val.startsWith("-") &&
                 !val.endsWith("-"),
             {
-                message: "Username cannot start or end with underscore or hyphen"
-            }
+                message: "Username cannot start or end with underscore or hyphen",
+            },
         ),
     password: z.string().trim().min(1, "Password is required"),
     roleName: z.union([
         z.string().trim().min(1, "Role is required"),
-        z.null().refine(() => false, { message: "Role is required" })
-    ])
+        z.null().refine(() => false, { message: "Role is required" }),
+    ]),
 });
 
 export const addUserResolver = zodResolver(addUserSchema);
@@ -39,7 +39,7 @@ export const editUserSchema = z.object({
         .min(3, "Username must be at least 3 characters long")
         .regex(
             /^[a-zA-Z0-9_-]+$/,
-            "Username can only contain letters, numbers and underscores or hyphens"
+            "Username can only contain letters, numbers and underscores or hyphens",
         )
         .refine(
             (val) =>
@@ -48,8 +48,8 @@ export const editUserSchema = z.object({
                 !val.startsWith("-") &&
                 !val.endsWith("-"),
             {
-                message: "Username cannot start or end with underscore or hyphen"
-            }
+                message: "Username cannot start or end with underscore or hyphen",
+            },
         )
         .optional(),
     password: z.string().trim().optional(),
@@ -57,9 +57,9 @@ export const editUserSchema = z.object({
     roleName: z
         .union([
             z.string().trim().min(1, "Role is required"),
-            z.null().refine(() => false, { message: "Role is required" })
+            z.null().refine(() => false, { message: "Role is required" }),
         ])
-        .optional()
+        .optional(),
 });
 
 export const editUserResolver = zodResolver(editUserSchema);

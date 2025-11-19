@@ -9,7 +9,7 @@ export const userColumns: TableColumn<IUserDetailedItem>[] = [
         label: "ID",
         keyInEntry: "id",
         sortKey: "id",
-        isVisible: true
+        isVisible: true,
     },
     { type: "entry", label: "Username", keyInEntry: "username", isVisible: true },
     { type: "entry", label: "Role", keyInEntry: "roleName", isVisible: true },
@@ -17,21 +17,21 @@ export const userColumns: TableColumn<IUserDetailedItem>[] = [
         type: "entry",
         keyInEntry: "isBlocked",
         label: "Is blocked",
-        isVisible: true
+        isVisible: true,
     },
     {
         type: "entry",
         label: "Last update",
         sortKey: "updatedAt",
         keyInEntry: "updatedAt",
-        isVisible: true
+        isVisible: true,
     },
     {
         type: "entry",
         label: "Created",
         sortKey: "createdAt",
         keyInEntry: "createdAt",
-        isVisible: true
+        isVisible: true,
     },
-    { type: "raw", key: "actions", label: "Actions", isVisible: true }
+    { type: "raw", key: "actions", label: "Actions", isVisible: true },
 ];

@@ -22,7 +22,7 @@ export const SortButtons = ({ columnKey, label }: SortButtonsProps) => {
                         styles["sort-buttons__icon"],
                         currentDirection === "asc"
                             ? styles["sort-buttons__icon_active"]
-                            : styles["sort-buttons__icon_inactive"]
+                            : styles["sort-buttons__icon_inactive"],
                     )}
                 />
                 <ChevronDown
@@ -31,7 +31,7 @@ export const SortButtons = ({ columnKey, label }: SortButtonsProps) => {
                         styles["sort-buttons__icon"],
                         currentDirection === "desc"
                             ? styles["sort-buttons__icon_active"]
-                            : styles["sort-buttons__icon_inactive"]
+                            : styles["sort-buttons__icon_inactive"],
                     )}
                 />
             </span>

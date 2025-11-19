@@ -17,7 +17,7 @@ export const TableWithActionsRow = <T extends { id: number }>({
     isChecked,
     toggleSelection,
     index,
-    renderBodyRow
+    renderBodyRow,
 }: TableWithActionsRowProps<T>) =>
     renderBodyRow(row, columns, isChecked, toggleSelection, index);
 

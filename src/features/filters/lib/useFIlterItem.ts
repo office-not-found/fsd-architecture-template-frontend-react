@@ -11,7 +11,7 @@ export const useFilterItem = ({ value, onChange }: useFilterItemParams) => {
 
     const debouncedOnChange = useDebouncedCallback(
         (newValue: string) => onChange(newValue || ""),
-        100
+        100,
     );
 
     const handleChangeSelectValue = (val: string | null) => {
@@ -30,6 +30,6 @@ export const useFilterItem = ({ value, onChange }: useFilterItemParams) => {
         setInputValue,
         debouncedOnChange,
         handleChangeSelectValue,
-        handleChangeInputValue
+        handleChangeInputValue,
     };
 };

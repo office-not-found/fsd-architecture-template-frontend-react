@@ -15,14 +15,14 @@ export const useLoginForm = () => {
     const {
         handleSubmit,
         register,
-        formState: { errors }
+        formState: { errors },
     } = useForm<TLoginData>({
         resolver: loginResolver,
         reValidateMode: "onChange",
         defaultValues: {
             username: "",
-            password: ""
-        }
+            password: "",
+        },
     });
 
     const onSuccess = () => {
@@ -34,9 +34,9 @@ export const useLoginForm = () => {
         mutate(
             {
                 username: data.username.trim(),
-                password: data.password.trim()
+                password: data.password.trim(),
             },
-            { onSuccess }
+            { onSuccess },
         );
     });
 
@@ -44,6 +44,6 @@ export const useLoginForm = () => {
         errors,
         register,
         onSubmit,
-        isPending
+        isPending,
     };
 };

@@ -6,7 +6,7 @@ import { customShowNotification } from "@/shared/lib/customNotifications";
 const defaultValues: DefaultValues<TAddUserForm> = {
     username: "",
     password: "",
-    roleName: ""
+    roleName: "",
 };
 
 interface IUseAddUserFormProps {
@@ -19,11 +19,11 @@ export const useAddUserForm = ({ closeModal }: IUseAddUserFormProps) => {
         register,
         formState: { errors },
         reset,
-        control
+        control,
     } = useForm<TAddUserForm>({
         resolver: addUserResolver,
         mode: "onChange",
-        defaultValues
+        defaultValues,
     });
 
     const { mutateAsync: createUser, isPending: isCreateUserPending } =
@@ -35,7 +35,7 @@ export const useAddUserForm = ({ closeModal }: IUseAddUserFormProps) => {
             id: `add-user-form-${newUsername}`,
             title: "User created",
             message: `User "${newUsername}" created successfully`,
-            color: "green"
+            color: "green",
         });
 
         closeModal();
@@ -46,7 +46,7 @@ export const useAddUserForm = ({ closeModal }: IUseAddUserFormProps) => {
         const body = {
             username: data.username.trim(),
             password: data.password.trim(),
-            roleName: data.roleName
+            roleName: data.roleName,
         };
 
         await createUser(body, { onSuccess });
@@ -57,6 +57,6 @@ export const useAddUserForm = ({ closeModal }: IUseAddUserFormProps) => {
         register,
         onSubmit,
         control,
-        isCreateUserPending
+        isCreateUserPending,
     };
 };

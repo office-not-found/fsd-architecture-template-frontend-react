@@ -15,9 +15,9 @@ export const useGetCurrentAccountQuery = () => {
             options: {
                 roleName: data.roleName.map((role) => ({
                     value: role.name,
-                    label: fromCamelCaseTransform(role.name)
-                }))
-            }
+                    label: fromCamelCaseTransform(role.name),
+                })),
+            },
         };
 
         setAccount(accountWithOptions);
@@ -27,7 +27,7 @@ export const useGetCurrentAccountQuery = () => {
 
     const query = useQuery({
         queryKey: [EQueryKeys.ACCOUNT],
-        queryFn
+        queryFn,
     });
 
     return query;

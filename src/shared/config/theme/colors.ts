@@ -10,5 +10,5 @@ export const colors: MantineThemeColors = {
     gray: colorsTuple("#a0a0a0"),
     grayLight: colorsTuple("#e0e0e0"),
     danger: colorsTuple("#ff5e5e"),
-    white: colorsTuple("#ffffff")
+    white: colorsTuple("#ffffff"),
 };

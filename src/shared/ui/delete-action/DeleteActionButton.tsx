@@ -16,7 +16,7 @@ export function DeleteActionButton({
     onDelete,
     buttonClassName,
     children,
-    isMultiple = false
+    isMultiple = false,
 }: DeleteActionButtonProps) {
     const [opened, { close, open }] = useDisclosure(false);
     const [isLoading, setIsLoading] = useState(false);
@@ -50,7 +50,7 @@ export function DeleteActionButton({
             renderRightTrigger={() => (
                 <Button
                     classNames={{
-                        label: styles["delete-action-button-label"]
+                        label: styles["delete-action-button-label"],
                     }}
                     variant="outline"
                     color="red"

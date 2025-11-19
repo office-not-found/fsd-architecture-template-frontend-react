@@ -21,7 +21,7 @@ export const UserTableRow = ({
     index,
     renderActions,
     isChecked,
-    onToggle
+    onToggle,
 }: UserTableRowProps) => {
     return (
         <Table.Tr>

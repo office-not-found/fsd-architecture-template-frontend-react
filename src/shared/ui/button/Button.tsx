@@ -1,7 +1,7 @@
 import {
     createPolymorphicComponent,
     Button as ButtonFromLibUi,
-    type ButtonProps
+    type ButtonProps,
 } from "@mantine/core";
 import { forwardRef } from "react";
 
@@ -12,5 +12,5 @@ export const Button = createPolymorphicComponent<"button", CustomButtonProps>(
         <ButtonFromLibUi {...others} ref={ref}>
             {children}
         </ButtonFromLibUi>
-    ))
+    )),
 );

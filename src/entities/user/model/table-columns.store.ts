@@ -10,5 +10,5 @@ interface UsersColumnsStore {
 
 export const useUsersColumnsStore = create<UsersColumnsStore>((set) => ({
     columns: userColumns,
-    setColumn: (columns) => set({ columns })
+    setColumn: (columns) => set({ columns }),
 }));

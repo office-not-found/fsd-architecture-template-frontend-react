@@ -7,7 +7,7 @@ import {
     UserActions,
     UserTableRow,
     useDeleteUserMutation,
-    useGetFilters
+    useGetFilters,
 } from "@/entities/user";
 import { Header } from "@/shared/ui";
 import styles from "./usersPage.module.scss";
@@ -34,7 +34,7 @@ export const UsersPage = () => {
                 onMultipleDelete={deleteUser}
                 paginationData={{
                     currentPage: data?.meta?.currentPage,
-                    totalPages: data?.meta?.totalPages
+                    totalPages: data?.meta?.totalPages,
                 }}
                 renderBodyRow={(row, columns, isChecked, toggleSelection, index) => (
                     <UserTableRow

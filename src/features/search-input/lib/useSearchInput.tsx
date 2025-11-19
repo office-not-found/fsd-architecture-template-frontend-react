@@ -28,6 +28,6 @@ export const useSearchInput = () => {
     return {
         searchValue,
         handleSearchChange,
-        handleClearSearch
+        handleClearSearch,
     };
 };

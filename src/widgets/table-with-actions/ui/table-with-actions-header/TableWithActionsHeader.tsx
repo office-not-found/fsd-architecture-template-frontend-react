@@ -8,7 +8,7 @@ export function TableWithActionsHeader<T extends { id: number }>({
     columns,
     handlers,
     allChecked = false,
-    indeterminate = false
+    indeterminate = false,
 }: TableWithActionsHeaderProps<T>) {
     return (
         <Table.Thead>

@@ -8,7 +8,7 @@ export const TableWithActionsBody = <T extends { id: number }>({
     columns,
     renderBodyRow,
     selectedIds,
-    handlers
+    handlers,
 }: TableWithActionsBodyProps<T>) => (
     <Table.Tbody>
         <Table.Tr className={styles["table-with-actions-body__row_separator"]} />

@@ -6,7 +6,7 @@ import { updateUser } from "../api";
 export const useUpdateUserMutation = () => {
     const mutation = useMutation({
         mutationFn: updateUser,
-        onSuccess: () => invalidateQueriesByKeys([EQueryKeys.USERS, EQueryKeys.ACCOUNT])
+        onSuccess: () => invalidateQueriesByKeys([EQueryKeys.USERS, EQueryKeys.ACCOUNT]),
     });
 
     return mutation;

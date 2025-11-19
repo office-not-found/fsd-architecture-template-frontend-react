@@ -10,7 +10,7 @@ interface TableSelectionToolbarProps {
 export function TableSelectionToolbar({
     hasChecked,
     onDelete,
-    children
+    children,
 }: TableSelectionToolbarProps) {
     if (!hasChecked) return null;
 

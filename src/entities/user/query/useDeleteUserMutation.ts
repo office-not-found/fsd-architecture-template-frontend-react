@@ -13,9 +13,9 @@ export const useDeleteUserMutation = () => {
             customShowNotification({
                 id: `delete-user-form-${ids}`,
                 title: "User deleted",
-                message: `Users with ids ${ids.join(", ")} have been deleted successfully`
+                message: `Users with ids ${ids.join(", ")} have been deleted successfully`,
             });
-        }
+        },
     });
 
     return mutation;

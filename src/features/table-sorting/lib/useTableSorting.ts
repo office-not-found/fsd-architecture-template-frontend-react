@@ -30,7 +30,7 @@ export const useTableSorting = (columnKey: URLSortParamsKey) => {
 
         setSearchParamsObject({
             ...newParams,
-            [columnKey]: newDirection
+            [columnKey]: newDirection,
         });
     }, [columnKey, currentDirection, params, setSearchParamsObject]);
 

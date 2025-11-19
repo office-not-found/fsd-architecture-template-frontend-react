@@ -11,13 +11,13 @@ export const useGetAllUsersQuery = () => {
         "id",
         "isBlocked",
         "updatedAt",
-        "createdAt"
+        "createdAt",
     ]);
 
     const query = useQuery({
         queryKey: [EQueryKeys.USERS, params],
         queryFn: () => fetchUsers(params),
-        enabled: !!params.page
+        enabled: !!params.page,
     });
 
     return query;

@@ -24,8 +24,8 @@ export const instanceApi = axios.create({
     paramsSerializer,
     headers: {
         "Content-Type": "application/json",
-        "Accept": "application/json"
-    }
+        "Accept": "application/json",
+    },
 });
 
 export const fetchRefresh = () => instanceApi.get("/auth/refresh");

@@ -10,7 +10,7 @@ export const TableWithActionsToolbar = <T extends { id: number }>({
     hasChecked,
     handleActionWithSelected,
     fieldsConfiguratorData,
-    columns
+    columns,
 }: TableWithActionsToolbarProps<T>) => {
     return (
         <div className={styles["table-with-actions-toolbar__header"]}>

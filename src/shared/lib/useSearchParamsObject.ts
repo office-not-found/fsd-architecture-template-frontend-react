@@ -8,9 +8,9 @@ type ExtractedParams<T extends readonly (keyof PartialURLParams)[] | undefined> 
         : PartialURLParams;
 
 export const useSearchParamsObject = <
-    T extends readonly (keyof PartialURLParams)[] | undefined = undefined
+    T extends readonly (keyof PartialURLParams)[] | undefined = undefined,
 >(
-    extractParams?: T
+    extractParams?: T,
 ) => {
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -52,6 +52,6 @@ export const useSearchParamsObject = <
 
     return {
         params: parsedParams,
-        setSearchParamsObject
+        setSearchParamsObject,
     };
 };

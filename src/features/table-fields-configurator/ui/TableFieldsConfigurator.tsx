@@ -13,7 +13,7 @@ interface TableFieldsConfiguratorProps<T> {
 
 export function TableFieldsConfigurator<T>({
     columns,
-    setter
+    setter,
 }: TableFieldsConfiguratorProps<T>) {
     const {
         opened,
@@ -21,7 +21,7 @@ export function TableFieldsConfigurator<T>({
         allowedToChangeColumns,
         handleCheckboxChange,
         setDropdown,
-        setTrigger
+        setTrigger,
     } = useTableFieldsConfigurator({ columns, setter });
 
     return (
@@ -29,8 +29,8 @@ export function TableFieldsConfigurator<T>({
             opened={opened}
             styles={{
                 dropdown: {
-                    background: "var(--mantine-color-backgroundBasic-0)"
-                }
+                    background: "var(--mantine-color-backgroundBasic-0)",
+                },
             }}
         >
             <Menu.Target ref={setTrigger}>

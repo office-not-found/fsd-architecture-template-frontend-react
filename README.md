@@ -38,15 +38,18 @@ npm run dev
 ```
 
 ## Прод-развертывание (build + статическая раздача)
+
 Для продакшена собираем статику и раздаём её любым веб‑сервером.
 
-1) Сборка
+1. Сборка
+
 ```
 npm ci
 npm run build
 ```
 
-2) Раздача статических файлов
+2. Раздача статических файлов
+
 - Размещайте содержимое папки `dist/` на любом веб‑сервере/хостинге.
 - Укажите корневой каталог на `dist/`, главный файл — `index.html`.
 - Для SPA необходимо настроить фоллбэк: неизвестные маршруты должны возвращать `index.html`.
@@ -85,39 +88,43 @@ npm run build
 # Таблицы: выбор, сортировка
 
 - Виджет: `src/widgets/table-with-actions` — готовая сборка таблицы с заголовком, тулбаром действий и телом.
-  - Компоненты: `TableWithActionsHeader`, `TableWithActionsToolbar`, `TableWithActionsBody`, обёртка `TableWithActions`.
-  - Колонки описываются типом `TableColumn<T>` (`src/shared/model/index.ts`):
-    - `type: "entry"` — колонка берёт значение из поля сущности (`keyInEntry: keyof T`).
-    - `type: "raw"` — произвольная колонка (лейбл/сортировка/видимость управляются извне).
-  - Рендер строк: через проп `renderBodyRow(row, columns, isChecked, toggleSelection, index)` — вы решаете, как отрисовать `<Table.Tr>` и ячейки.
+
+    - Компоненты: `TableWithActionsHeader`, `TableWithActionsToolbar`, `TableWithActionsBody`, обёртка `TableWithActions`.
+    - Колонки описываются типом `TableColumn<T>` (`src/shared/model/index.ts`):
+        - `type: "entry"` — колонка берёт значение из поля сущности (`keyInEntry: keyof T`).
+        - `type: "raw"` — произвольная колонка (лейбл/сортировка/видимость управляются извне).
+    - Рендер строк: через проп `renderBodyRow(row, columns, isChecked, toggleSelection, index)` — вы решаете, как отрисовать `<Table.Tr>` и ячейки.
 
 - Выбор строк: `src/features/table-selection`
-  - Хук `useTableSelection(data)` возвращает: `selectedIds: Set<number>`, `handlers: { toggleSelection, selectAll, deselectAll, isSelected }`, а также флаги `allChecked`/`indeterminate` для чекбокса в шапке.
-  - Тулбар `TableSelectionToolbar` показывает кнопки для массовых действий, состояние выделения и т.п.
+
+    - Хук `useTableSelection(data)` возвращает: `selectedIds: Set<number>`, `handlers: { toggleSelection, selectAll, deselectAll, isSelected }`, а также флаги `allChecked`/`indeterminate` для чекбокса в шапке.
+    - Тулбар `TableSelectionToolbar` показывает кнопки для массовых действий, состояние выделения и т.п.
 
 - Сортировка: `src/features/table-sorting`
-  - Хук инкапсулирует текущий `sortKey`/`direction` и коллбеки переключения.
-  - Заголовок таблицы читает конфигурацию колонок и отображает кнопки сортировки для колонок с `sortKey`.
+    - Хук инкапсулирует текущий `sortKey`/`direction` и коллбеки переключения.
+    - Заголовок таблицы читает конфигурацию колонок и отображает кнопки сортировки для колонок с `sortKey`.
 
 Краткий пример использования тела таблицы:
 
 ```tsx
 <TableWithActionsBody
-  data={rows}
-  columns={columns}
-  selectedIds={selectedIds}
-  handlers={{ toggleSelection }}
-  renderBodyRow={(row, columns, isChecked, toggleSelection) => (
-    <Table.Tr key={row.id}>
-      <Table.Td>
-        <Checkbox checked={isChecked} onChange={() => toggleSelection(row.id)} />
-      </Table.Td>
-      {columns.map((col) => (
-        <Table.Td key={col.key}>
-          {col.type === "entry" ? String(row[col.keyInEntry]) : renderRaw(col, row)}
-        </Table.Td>
-      ))}
-    </Table.Tr>
-  )}
+    data={rows}
+    columns={columns}
+    selectedIds={selectedIds}
+    handlers={{ toggleSelection }}
+    renderBodyRow={(row, columns, isChecked, toggleSelection) => (
+        <Table.Tr key={row.id}>
+            <Table.Td>
+                <Checkbox checked={isChecked} onChange={() => toggleSelection(row.id)} />
+            </Table.Td>
+            {columns.map((col) => (
+                <Table.Td key={col.key}>
+                    {col.type === "entry"
+                        ? String(row[col.keyInEntry])
+                        : renderRaw(col, row)}
+                </Table.Td>
+            ))}
+        </Table.Tr>
+    )}
 />
 ```

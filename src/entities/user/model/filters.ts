@@ -4,7 +4,7 @@ export const filterUserPageData = [
         label: "Role name",
         paramsKey: "roleName",
         placeholder: "Select role name",
-        options: []
+        options: [],
     },
     {
         type: "select",
@@ -13,7 +13,7 @@ export const filterUserPageData = [
         placeholder: "Select is blocked",
         options: [
             { value: "true", label: "yes" },
-            { value: "false", label: "no" }
-        ]
-    }
+            { value: "false", label: "no" },
+        ],
+    },
 ];

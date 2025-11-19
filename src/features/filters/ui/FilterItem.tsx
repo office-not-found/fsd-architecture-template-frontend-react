@@ -17,11 +17,11 @@ export const FilterItem = ({
     value,
     onChange,
     onDropdownOpen,
-    onDropdownClose
+    onDropdownClose,
 }: FilterItemProps) => {
     const { label, type, placeholder } = filter;
     const { inputValue, handleChangeInputValue, handleChangeSelectValue } = useFilterItem(
-        { value, onChange }
+        { value, onChange },
     );
 
     return (

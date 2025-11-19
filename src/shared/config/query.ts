@@ -5,7 +5,7 @@ export const enum EQueryKeys {
     AUTH = "auth",
     ACCOUNT = "account",
     USERS = "users",
-    PARTNERS = "partners"
+    PARTNERS = "partners",
 }
 
 export const queryClient = new QueryClient({
@@ -13,7 +13,7 @@ export const queryClient = new QueryClient({
         mutations: {
             onError: (error) => {
                 if (error.response?.status !== 401) throwErrorToast(error);
-            }
+            },
         },
         queries: {
             placeholderData: (previousData: unknown) => previousData, // Show previous data while fetching new data
@@ -31,7 +31,7 @@ export const queryClient = new QueryClient({
                 if (error.response?.status !== 401) throwErrorToast(error);
 
                 return false;
-            }
-        }
-    }
+            },
+        },
+    },
 });

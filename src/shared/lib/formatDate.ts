@@ -1,18 +1,18 @@
 const defaultOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
     month: "numeric",
-    day: "numeric"
+    day: "numeric",
 };
 
 export const formatDate = (
     date: string | Date,
     locale: Intl.LocalesArgument = "ru-RU",
-    options = defaultOptions
+    options = defaultOptions,
 ) => {
     try {
         const formattedDate = Intl.DateTimeFormat(locale, {
             ...defaultOptions,
-            ...options
+            ...options,
         }).format(new Date(date));
 
         return formattedDate;
@@ -27,11 +27,11 @@ export const fullDateOptions: Intl.DateTimeFormatOptions = {
     month: "numeric",
     day: "numeric",
     hour: "numeric",
-    minute: "numeric"
+    minute: "numeric",
 };
 export const yearMonthsOptions: Intl.DateTimeFormatOptions = {
     year: "numeric",
-    month: "numeric"
+    month: "numeric",
 };
 
 export const getFullDate = (date: string | Date | undefined) => {

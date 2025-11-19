@@ -2,7 +2,7 @@ import { Notifications } from "@mantine/notifications";
 import type { PropsWithChildren } from "react";
 import {
     NOTIFICATIONS_TIME_CLOSE_MS,
-    NOTIFICATIONS_TRANSITION_MS
+    NOTIFICATIONS_TRANSITION_MS,
 } from "@/shared/config/notifications";
 
 export const ToasterProvider = ({ children }: PropsWithChildren) => (

@@ -4,7 +4,7 @@ import type { addUserSchema, editUserSchema } from "./schema";
 
 export enum EUserRoleName {
     CLIENT = "client",
-    ADMIN = "admin"
+    ADMIN = "admin",
 }
 
 export type TUserRoleNames = GetTypeOfValuesFromEnum<EUserRoleName>;

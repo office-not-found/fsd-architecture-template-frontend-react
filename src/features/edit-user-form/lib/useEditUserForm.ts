@@ -9,7 +9,7 @@ import {
     type TEditUserForm,
     type IUserBaseItem,
     type IUserDetailedItem,
-    type IUserUpdateParams
+    type IUserUpdateParams,
 } from "@/entities/user";
 import { ROUTES } from "@/shared/config/routes";
 import { customShowNotification, useHistoryNavigation } from "@/shared/lib";
@@ -21,7 +21,7 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
         id: userData?.id,
         username: userData?.username,
         roleName: userData?.roleName,
-        isBlocked: userData?.isBlocked
+        isBlocked: userData?.isBlocked,
     };
 
     const {
@@ -31,11 +31,11 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
         formState: { errors },
         reset,
         control,
-        setValue
+        setValue,
     } = useForm<TEditUserForm>({
         resolver: editUserResolver,
         mode: "onChange",
-        defaultValues: initialValues
+        defaultValues: initialValues,
     });
 
     const { mutateAsync: updateUser, isPending: isUpdateUserPending } =
@@ -50,7 +50,7 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
             id: `edit-user-form-${data.id}`,
             title: "User updated",
             message: `User "${data?.username}" updated successfully`,
-            color: "green"
+            color: "green",
         });
 
         navigate();
@@ -64,7 +64,7 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
     const filteredRoleOptions =
         roleName !== EUserRoleName.ADMIN
             ? roleOptions.filter(
-                  (role) => (role as ComboboxItem).value !== EUserRoleName.ADMIN
+                  (role) => (role as ComboboxItem).value !== EUserRoleName.ADMIN,
               )
             : roleOptions;
 
@@ -88,7 +88,7 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
                 id: `edit-user-form-${data.id}`,
                 title: "No changes",
                 message: "No changes to save user",
-                color: "blue"
+                color: "blue",
             });
             return;
         }
@@ -108,6 +108,6 @@ export const useEditUserForm = (userData: IUserDetailedItem | undefined) => {
         control,
         reset,
         disabledChangeRoleForAdmin,
-        roleOptions: filteredRoleOptions
+        roleOptions: filteredRoleOptions,
     };
 };

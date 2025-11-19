@@ -8,7 +8,8 @@ export const useLoginMutation = () => {
     const mutation = useMutation({
         mutationKey: [EQueryKeys.AUTH],
         mutationFn: fetchLogin,
-        onSuccess: () => queryClient.invalidateQueries({ queryKey: [EQueryKeys.ACCOUNT] })
+        onSuccess: () =>
+            queryClient.invalidateQueries({ queryKey: [EQueryKeys.ACCOUNT] }),
     });
 
     return mutation;

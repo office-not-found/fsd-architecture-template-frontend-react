@@ -28,7 +28,7 @@ export const useFilters = ({ filters }: useFiltersParams) => {
             }
         },
         null,
-        [dropdown, trigger]
+        [dropdown, trigger],
     );
 
     const updateDraft = (key: keyof PartialNonSortParams, value: string) => {
@@ -89,6 +89,6 @@ export const useFilters = ({ filters }: useFiltersParams) => {
         setSelectOpen,
         disabledClearAllButton,
         applyFilters,
-        handleClearAll
+        handleClearAll,
     };
 };

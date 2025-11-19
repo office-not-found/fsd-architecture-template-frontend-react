@@ -14,10 +14,10 @@ export const theme = createTheme({
         if (input.variant === "filled") {
             return {
                 ...defaultResolvedColors,
-                color: colors.backgroundBasic[0]
+                color: colors.backgroundBasic[0],
             };
         }
 
         return defaultResolvedColors;
-    }
+    },
 });

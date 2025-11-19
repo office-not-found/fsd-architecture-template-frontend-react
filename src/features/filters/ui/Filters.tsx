@@ -21,7 +21,7 @@ export const Filters = ({ filters }: FiltersProps) => {
         setSelectOpen,
         disabledClearAllButton,
         applyFilters,
-        handleClearAll
+        handleClearAll,
     } = useFilters({ filters });
 
     return (

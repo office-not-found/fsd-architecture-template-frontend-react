@@ -13,20 +13,20 @@ export const usePagination = ({ total }: UsePaginationArgs) => {
     useEffect(() => {
         if (!page || page < 1) {
             setSearchParamsObject({
-                page: "1"
+                page: "1",
             });
         }
 
         if (total && page > total) {
             setSearchParamsObject({
-                page: total.toString()
+                page: total.toString(),
             });
         }
     }, [page, total]);
 
     const handleChangePage = (newPage: number) => {
         setSearchParamsObject({
-            page: newPage.toString()
+            page: newPage.toString(),
         });
     };
 

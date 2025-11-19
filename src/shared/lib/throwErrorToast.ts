@@ -22,6 +22,6 @@ export const throwErrorToast = (error: unknown) => {
         id: "api-error",
         title: "Error occurred",
         message: errorMessage,
-        color: "red"
+        color: "red",
     });
 };

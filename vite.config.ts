@@ -27,14 +27,14 @@ export default defineConfig({
     plugins: [react(), svgr()],
     server: {
         host: true,
-        open: true
+        open: true,
     },
     preview: {
-        port: 5173
-    },    
+        port: 5173,
+    },
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "./src")
-        }
-    }
+            "@": path.resolve(__dirname, "./src"),
+        },
+    },
 });
