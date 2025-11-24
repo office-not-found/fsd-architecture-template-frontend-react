@@ -1,4 +1,5 @@
 @use "./reset";
+@use "./fonts";
 
 :root[data-mantine-color-scheme="dark"] {
     --mantine-color-body: var(--mantine-color-backgroundDark-0);

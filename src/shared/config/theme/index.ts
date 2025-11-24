@@ -1,6 +1,5 @@
 import { createTheme, defaultVariantColorsResolver } from "@mantine/core";
 import { colors } from "./colors";
-
 import "./index.scss";
 
 export const theme = createTheme({
